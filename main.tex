@@ -1,0 +1,182 @@
+\documentclass[aspectratio=1610]{beamer}
+\hypersetup{
+        unicode=true,
+        linkcolor=blue,
+        anchorcolor=blue,
+        citecolor=green,
+        filecolor=black,
+        urlcolor=blue
+    }
+
+%%%%% PACKAGES HERE
+%% \usepackage{}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{listings}
+\usepackage[cache=false]{minted}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{positioning,calc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{fontawesome}
+\usepackage[english]{babel}
+
+\usepackage[backend=biber, style=numeric]{biblatex} 
+\addbibresource{references.bib}
+
+\input{smile_styles}
+
+%% Start from here.
+\title{Improvement of the Minkowski Constant\\ 
+       in Multidimensional Best Approximation\\}
+\author{Rongqing Wang, Zhongyi Li, Tianer Tang\\
+        (Santa's Little Helpers)}
+\date\today
+
+
+
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+
+\begin{frame}{Outline}
+  \tableofcontents
+
+  // This frame is the outline page which contains the full outline.
+  \end{frame}
+
+
+
+\section{Preliminaries}
+\subsection{1.1 Definitions of SA, LF, and Exponents of Growth}
+
+\begin{frame}
+  \frametitle{1.1.1 Simultaneous Approximation (SA)}
+Let $\boldsymbol{\alpha} = (\alpha_1,\dots,\alpha_d) \in \mathbb{R}^d/ \mathbb{Q}^d$ .\\
+\emph{Simultaneous approximation} seeks best approximation vectors
+\[
+(q_\nu, \mathbf{p_\nu}) = (q_\nu, p_{\nu,1}, \dots, p_{\nu,d}) \in \mathbb{Z}^{d+1}, \quad q_\nu > 0,
+\]
+such that the approximation error $\mathbf{|r_\nu|} =||q_\nu \boldsymbol{\alpha} - \mathbf{p_\nu}||$ equals the irrationality measure function
+\[
+\psi_\alpha(t) := \min_{\mathbf{p_\nu} \in \mathbb{Z}^d, 1 \le q_\nu \le t} \ ||q_\nu \boldsymbol{\alpha} - \mathbf{p_\nu}||.
+\]
+By definition, $\psi_\alpha(t) $ strictly decreases for increasing \(q_\nu\), so the \emph{best approximation sequence} $\{(q_\nu, \mathbf{p}_\nu)\}_{\nu \ge 1}$ is obtained by arranging these vectors in order of strictly increasing $q_\nu$.
+\end{frame}
+
+\begin{frame}
+  \frametitle{1.1.2 Linear Form Approximation (LF)}
+Let $\boldsymbol{\alpha} = (\alpha_1,\dots,\alpha_d) \in \mathbb{R}^d$ be totally irrational (i.e. , $1, \alpha_1, \dots, \alpha_d$ are linearly independent over $\mathbb{Q}$).\\
+\emph{Linear form approximation} seeks best approximation vectors
+\[
+(\mathbf{q_\nu}, p_\nu) = (q_{\nu,1}, \dots, q_{\nu,d}, p_\nu) \in \mathbb{Z}^{d+1}, \quad p_\nu > 0,
+\]
+such that the approximation error
+\[
+|r_\nu| := \left| \mathbf{q_\nu \boldsymbol{\alpha}} + p_\nu \right|
+\]
+equals the linear form irrationality measure function
+\[
+\psi_\alpha^*(t) := \min_{\substack{(p_\nu, \mathbf{q_\nu}) \in \mathbb{Z}^{d+1} \setminus \{\mathbf{0}\} \\ 0 < |\mathbf{q_\nu}| < t}} \left|| \mathbf{q_\nu \boldsymbol{\alpha}} + p_\nu \right||.
+\]
+The \emph{best approximation sequence} ${{\mathbf{\{q_\nu}, p_\nu}}\}_{\nu \ge 1}$ is obtained by arranging these vectors in order of strictly increasing norm such that $\psi_\alpha^*(t)$ decreases.
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Exponents of Growth}
+Let $(q_\nu, r_\nu)$ be the denominators and remainders of the SA best approximation sequence.  
+The \emph{denominator growth exponent} in SA is
+\[
+\liminf_{\nu \to \infty} \ q_\nu ^{1/\nu}.
+\]
+Similarly, the \emph{remainder decay exponent} in linear form approximation is
+\[
+\limsup_{\nu \to \infty} \ \delta_\nu ^{1/\nu}
+\]
+
+\end{frame}
+
+\subsection{Duality between SA and LF}
+\subsection{Outline of Achievements}
+
+\section{Simultaneous Approximation}
+
+\subsection {Proof of Lagarias}
+\begin{frame}
+  \frametitle{}
+\begin{theorem}[Lagarias, 1982, \cite{Lagarias82}]
+If \(\alpha\) has only one irrational coordinate, then for all sufficiently large enough \(\alpha\), \[q_{k+2}\geq q_{k+1}+q_k\]
+If \(\alpha\) has both coordinates irrational, then \[q_{k+3}<q_{k+1}+q_k\]
+can only occur when
+\[q_{k+3}=q_{k+2}+q_{k+1}-q_{k}.\]
+\end{theorem}
+  \begin{corollary}
+  For the sup norm \(||\cdot ||_\infty\) on \(R^2\) the minimal growth rate for SA denominators satisfies
+      \begin{equation}
+    G(|\cdot ||_\infty\ ) = \liminf_{\nu\to\infty} q_{\nu}^{1/\nu}\geq \theta,
+\end{equation}
+where \(\theta = \sqrt{\phi}\) is the largest real root of
+\(\theta^4=\theta^2+1.\)
+  \end{corollary}
+\end{frame}
+
+\subsection {Proof}
+\begin{frame}
+  \frametitle{Proof}
+Graph.
+\end{frame}
+\subsection {Proof}
+\begin{frame}
+  \frametitle{Proof}
+Show that\[q_{k+i}-q_{k+j}>q_{k+j+1},(?)\] 
+then
+\[q_{k+3}\geq q_{k+i}\>q_{k+j}+q_{k+j+1} \]
+for \(i,j\in\{0,1,2,3\}\)
+\end{frame}
+
+
+
+\subsection{Improving the Minkowski Constant by Exponential Growth of {$q_\nu$}}
+
+\section {Linear Form}
+
+\subsection {Sub sec}
+\begin{frame}
+  \frametitle{Something}
+\[\delta_{\nu}+\delta_{\nu-1}\leq \delta_{\nu-k},\]
+where $\delta_{\nu}=\|\overline{q}_{\nu}\cdot \overline{\alpha} \|_{\mathbb{Z}^d}$
+\end{frame}
+
+\begin{frame}{Frame Title}
+    ?Want to prove 
+    \[|\overline{q}_{\nu+12}\geq2|\overline{q}_\nu| |\]
+\end{frame}
+
+\section{Duality of the Minkowski Constant from SA to LF}
+
+
+
+
+\addtobeamertemplate{frametitle}{}{%
+    \vspace*{-1.5em} % 将标题下移，从而压缩标题区域，留出更多内容显示空间
+}
+  \begin{frame}[allowframebreaks]
+    \frametitle{References}
+   \printbibliography
+\end{frame}
+
+
+
+\begin{frame}{}
+\begin{center} \Huge Thank You! \end{center} 
+\end{frame}
+\end{document}
